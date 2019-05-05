@@ -1,0 +1,44 @@
+Microsoft (R) Macro Assembler Version 6.11		    04/19/19 09:07:04
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATA SEGMENT
+ 0000 48 65 6C 6C 6F 20		     hello  DB 'Hello World!$';
+       57 6F 72 6C 64 21
+       24
+ 000D				DATA ENDS
+ 0000				CODE SEGMENT
+				    ASSUME CS:CODE,DS:DATA
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,data ;     
+ 0003  8E D8			    MOV DS,AX;
+ 0005  8D 16 0000 R		    LEA DX,hello;
+ 0009  B4 09			    MOV AH,09h;
+ 000B  CD 21			    INT 21h;
+ 000D  B8 4C00			    MOV AX,4C00h;
+ 0010  CD 21			    int 21h;
+ 0012				CODE ENDS
+				    END START
+Microsoft (R) Macro Assembler Version 6.11		    04/19/19 09:07:04
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODE . . . . . . . . . . . . . .	16 Bit	 0012	  Para	  Private 
+DATA . . . . . . . . . . . . . .	16 Bit	 000D	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODE	
+hello  . . . . . . . . . . . . .	Byte	 0000	  DATA	
+
+	   0 Warnings
+	   0 Errors
